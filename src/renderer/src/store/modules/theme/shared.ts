@@ -184,12 +184,12 @@ export function toggleCssDarkMode(darkMode = false) {
 }
 
 /**
- * Toggle grayscale mode
+ * Toggle grayScale mode
  *
- * @param grayscaleMode Is grayscale mode
+ * @param grayscaleMode Is grayScale mode
  */
 export function toggleGrayscaleMode(grayscaleMode = false) {
-  const GRAYSCALE_CLASS = 'grayscale'
+  const GRAYSCALE_CLASS = 'grayScale'
 
   const { add, remove } = toggleHtmlClass(GRAYSCALE_CLASS)
 

@@ -41,6 +41,6 @@ appImage:
 npmRebuild: false
 publish:
   provider: generic
-  url: https://www.knifez.net/download/118crm/
+  url: http://localhost/versions/fridayboot-electron/
 electronDownload:
   mirror: https://npmmirror.com/mirrors/electron/

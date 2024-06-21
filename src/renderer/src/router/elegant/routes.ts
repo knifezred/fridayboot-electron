@@ -46,7 +46,7 @@ export const generatedRoutes: GeneratedRoute[] = [
     meta: {
       title: 'about',
       i18nKey: 'route.about',
-      icon: 'fluent:book-information-24-regular',
+      icon: 'mynaui:info-square',
       order: 10
     }
   },
@@ -57,7 +57,7 @@ export const generatedRoutes: GeneratedRoute[] = [
     meta: {
       title: 'home',
       i18nKey: 'route.home',
-      icon: 'mdi:monitor-dashboard',
+      icon: 'mynaui:home',
       order: 1
     }
   },

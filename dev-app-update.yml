@@ -1,3 +1,3 @@
 provider: generic
-url: https://www.knifez.net/download/118crm/
+url: http://localhost/versions/fridayboot-electron/
 updaterCacheDirName: electron-app-updater

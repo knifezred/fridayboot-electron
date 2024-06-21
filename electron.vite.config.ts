@@ -1,4 +1,5 @@
 import ElegantVueRouter from '@elegant-router/vue/vite'
+import dayjs from 'dayjs'
 import { defineConfig, externalizeDepsPlugin } from 'electron-vite'
 import { resolve } from 'path'
 import { loadEnv } from 'vite'
@@ -7,6 +8,7 @@ import { setupVitePlugins } from './build/plugins'
 
 export default defineConfig((configEnv) => {
   const viteEnv = loadEnv(configEnv.mode, process.cwd())
+  const buildTime = dayjs().format('YYYY-MM-DD HH:mm:ss')
   return {
     main: {
       plugins: [externalizeDepsPlugin()]
@@ -27,6 +29,9 @@ export default defineConfig((configEnv) => {
             additionalData: `@use "src/renderer/src/styles/scss/global.scss" as *;`
           }
         }
+      },
+      define: {
+        BUILD_TIME: JSON.stringify(buildTime)
       },
       plugins: [
         setupVitePlugins(viteEnv),

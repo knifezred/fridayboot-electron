@@ -49,8 +49,8 @@ const showSiderInverted = computed(() => !themeStore.darkMode && themeStore.layo
         <NSwitch v-model:value="themeStore.sider.inverted" />
       </SettingItem>
     </Transition>
-    <SettingItem :label="$t('theme.grayscale')">
-      <NSwitch :value="themeStore.grayscale" @update:value="handleGrayscaleChange" />
+    <SettingItem :label="$t('theme.grayScale')">
+      <NSwitch :value="themeStore.grayScale" @update:value="handleGrayscaleChange" />
     </SettingItem>
   </div>
 </template>

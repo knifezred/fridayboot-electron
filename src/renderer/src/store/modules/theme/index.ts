@@ -30,8 +30,8 @@ export const useThemeStore = defineStore(SetupStoreId.Theme, () => {
     return settings.value.themeScheme === 'dark'
   })
 
-  /** grayscale mode */
-  const grayscaleMode = computed(() => settings.value.grayscale)
+  /** grayScale mode */
+  const grayscaleMode = computed(() => settings.value.grayScale)
 
   /** Theme colors */
   const themeColors = computed(() => {
@@ -71,12 +71,12 @@ export const useThemeStore = defineStore(SetupStoreId.Theme, () => {
   }
 
   /**
-   * Set grayscale value
+   * Set grayScale value
    *
    * @param isGrayscale
    */
   function setGrayscale(isGrayscale: boolean) {
-    settings.value.grayscale = isGrayscale
+    settings.value.grayScale = isGrayscale
   }
 
   /** Toggle theme scheme */

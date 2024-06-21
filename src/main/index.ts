@@ -1,15 +1,19 @@
 import { electronApp, is, optimizer } from '@electron-toolkit/utils'
 import { BrowserWindow, Menu, Tray, app, ipcMain, shell } from 'electron'
+import log from 'electron-log'
 import { join } from 'path'
 import icon from '../../resources/icon.png?asset'
-
+import { autoUpdaterInit } from './service/auto-update'
+import { createExpressServer } from './service/express-server'
+import { Settings } from './settings'
+let httpServer
 let mainWindow: BrowserWindow
 function createWindow(): void {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 1920,
     height: 1080,
-    title: 'fridayboot-electron v' + app.getVersion(),
+    title: Settings.AppTitle + ' v' + app.getVersion(),
     show: false,
     frame: false,
     resizable: true,
@@ -69,11 +73,24 @@ app.whenReady().then(() => {
 // explicitly with Cmd + Q.
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
-    console.log('app quit')
+    log.info('app quit')
     app.quit()
   }
 })
+
+app.on('before-quit', function () {
+  // 停止服务器
+  if (httpServer) {
+    httpServer.close(() => {
+      log.info('Server closed successfully')
+    })
+  }
+})
 app.whenReady().then(() => {
+  // 检查更新
+  autoUpdaterInit(mainWindow)
+
+  httpServer = createExpressServer(app)
   const tray = new Tray(icon)
   const contextMenu = Menu.buildFromTemplate([
     {

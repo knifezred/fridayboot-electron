@@ -1,14 +1,14 @@
 /** Default theme settings */
 export const themeSettings: App.Theme.ThemeSetting = {
   themeScheme: 'light',
-  grayscale: false,
+  grayScale: false,
   recommendColor: false,
   themeColor: '#646cff',
   otherColor: {
-    info: '#2080f0',
-    success: '#52c41a',
-    warning: '#faad14',
-    error: '#f5222d'
+    info: '#228be6',
+    success: '#40c057',
+    warning: '#fab005',
+    error: '#fa5252'
   },
   isInfoFollowPrimary: true,
   layout: {
@@ -20,14 +20,14 @@ export const themeSettings: App.Theme.ThemeSetting = {
     animateMode: 'fade-slide'
   },
   header: {
-    height: 56,
+    height: 42,
     breadcrumb: {
       visible: true,
       showIcon: true
     }
   },
   tab: {
-    visible: true,
+    visible: false,
     cache: true,
     height: 44,
     mode: 'chrome'

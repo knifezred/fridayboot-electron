@@ -7,6 +7,15 @@ declare namespace Env {
   /** The router history mode */
   type RouterHistoryMode = 'hash' | 'history' | 'memory'
 
+  interface ImportMetaEnv {
+    [key: string]: any
+    BASE_URL: string
+    MODE: string
+    DEV: boolean
+    PROD: boolean
+    SSR: boolean
+  }
+
   /** Interface for import.meta */
   interface ImportMeta extends ImportMetaEnv {
     /** The base url of the application */

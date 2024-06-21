@@ -180,7 +180,7 @@ declare namespace App {
       }
       theme: {
         themeSchema: { title: string } & Record<UnionKey.ThemeScheme, string>
-        grayscale: string
+        grayScale: string
         layoutMode: { title: string } & Record<UnionKey.ThemeLayoutMode, string>
         recommendColor: string
         recommendColorDesc: string
@@ -280,13 +280,19 @@ declare namespace App {
         }
         about: {
           title: string
-          introduction: string
           projectInfo: {
             title: string
+            author: string
             version: string
             latestBuildTime: string
             githubLink: string
             previewLink: string
+          }
+          update: {
+            newUpdateVersion: string
+            noUpdateVersion: string
+            rebootAndUpdate: string
+            checkUpdate: string
           }
           prdDep: string
           devDep: string
@@ -343,7 +349,7 @@ declare namespace App {
         minimize: string
         maximize: string
       }
-      datatable: {
+      dataTable: {
         itemCount: string
       }
     }
@@ -392,8 +398,8 @@ declare namespace App {
     interface ThemeSetting {
       /** Theme scheme */
       themeScheme: UnionKey.ThemeScheme
-      /** grayscale mode */
-      grayscale: boolean
+      /** grayScale mode */
+      grayScale: boolean
       /** Whether to recommend color */
       recommendColor: boolean
       /** Theme color */
