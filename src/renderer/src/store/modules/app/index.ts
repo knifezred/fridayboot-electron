@@ -8,13 +8,13 @@ import { breakpointsTailwind, useBreakpoints, useEventListener, useTitle } from 
 import { defineStore } from 'pinia'
 import { effectScope, nextTick, onScopeDispose, ref, watch } from 'vue'
 import { useRouteStore } from '../route'
-// import { useTabStore } from '../tab'
+import { useTabStore } from '../tab'
 import { useThemeStore } from '../theme'
 
 export const useAppStore = defineStore(SetupStoreId.App, () => {
   const themeStore = useThemeStore()
   const routeStore = useRouteStore()
-  // const tabStore = useTabStore()
+  const tabStore = useTabStore()
   const scope = effectScope()
   const breakpoints = useBreakpoints(breakpointsTailwind)
   const {
@@ -34,7 +34,8 @@ export const useAppStore = defineStore(SetupStoreId.App, () => {
     bool: mixSiderFixed,
     setBool: setMixSiderFixed,
     toggle: toggleMixSiderFixed
-  } = useBoolean(localStg.get('mixSiderFixed') === 'Y')
+  } = useBoolean(true)
+  // localStg.get('mixSiderFixed') === 'Y'
 
   /** Is mobile layout */
   const isMobile = breakpoints.smaller('sm')
@@ -129,7 +130,7 @@ export const useAppStore = defineStore(SetupStoreId.App, () => {
       routeStore.updateGlobalMenusByLocale()
 
       // update tabs by locale
-      // tabStore.updateTabsByLocale()
+      tabStore.updateTabsByLocale()
 
       // sey dayjs locale
       setDayjsLocale(locale.value)

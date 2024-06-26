@@ -2,7 +2,7 @@
 export const themeSettings: App.Theme.ThemeSetting = {
   themeScheme: 'light',
   grayScale: false,
-  recommendColor: false,
+  recommendColor: true,
   themeColor: '#646cff',
   otherColor: {
     info: '#228be6',
@@ -29,7 +29,7 @@ export const themeSettings: App.Theme.ThemeSetting = {
   tab: {
     visible: false,
     cache: true,
-    height: 44,
+    height: 42,
     mode: 'chrome'
   },
   fixedHeaderAndTab: true,
@@ -46,7 +46,8 @@ export const themeSettings: App.Theme.ThemeSetting = {
     fixed: false,
     height: 48,
     right: true
-  }
+  },
+  id: 0
 }
 
 /**

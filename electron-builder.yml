@@ -1,5 +1,5 @@
 appId: com.knifez.fridayboot-electron
-productName: fridayboot-electron
+productName: fridayboot electron
 directories:
   buildResources: build
 files:

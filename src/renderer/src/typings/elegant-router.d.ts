@@ -20,9 +20,13 @@ declare module "@elegant-router/types" {
     "403": "/403";
     "404": "/404";
     "500": "/500";
-    "about": "/about";
+    "archive": "/archive";
     "home": "/home";
     "login": "/login/:module(pwd-login|register|reset-pwd)?";
+    "setting": "/setting";
+    "setting_about": "/setting/about";
+    "setting_system": "/setting/system";
+    "setting_theme": "/setting/theme";
   };
 
   /**
@@ -57,9 +61,10 @@ declare module "@elegant-router/types" {
     | "403"
     | "404"
     | "500"
-    | "about"
+    | "archive"
     | "home"
     | "login"
+    | "setting"
   >;
 
   /**
@@ -79,9 +84,12 @@ declare module "@elegant-router/types" {
     | "403"
     | "404"
     | "500"
-    | "about"
+    | "archive"
     | "home"
     | "login"
+    | "setting_about"
+    | "setting_system"
+    | "setting_theme"
   >;
 
   /**

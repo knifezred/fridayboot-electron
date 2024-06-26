@@ -10,5 +10,6 @@
   },
   "i18n-ally.localesPaths": [
     "src/renderer/src/locales/langs"
-  ]
+  ],
+  "i18n-ally.keystyle": "nested"
 }

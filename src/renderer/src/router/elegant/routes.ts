@@ -40,13 +40,13 @@ export const generatedRoutes: GeneratedRoute[] = [
     }
   },
   {
-    name: 'about',
-    path: '/about',
-    component: 'layout.base$view.about',
+    name: 'archive',
+    path: '/archive',
+    component: 'layout.base$view.archive',
     meta: {
-      title: 'about',
-      i18nKey: 'route.about',
-      icon: 'mynaui:info-square',
+      title: 'archive',
+      icon: 'mynaui:archive',
+      i18nKey: 'route.archive',
       order: 10
     }
   },
@@ -72,5 +72,48 @@ export const generatedRoutes: GeneratedRoute[] = [
       hideInMenu: true
     },
     props: true
+  },
+  {
+    name: 'setting',
+    path: '/setting',
+    component: 'layout.base',
+    meta: {
+      title: 'setting',
+      icon: 'carbon:settings-adjust',
+      i18nKey: 'route.setting',
+      order: 999
+    },
+    children: [
+      {
+        name: 'setting_about',
+        path: '/setting/about',
+        component: 'view.setting_about',
+        meta: {
+          title: 'setting_about',
+          icon: 'mynaui:info-square',
+          i18nKey: 'route.setting_about'
+        }
+      },
+      {
+        name: 'setting_system',
+        path: '/setting/system',
+        component: 'view.setting_system',
+        meta: {
+          title: 'setting_system',
+          icon: 'mynaui:cog-one',
+          i18nKey: 'route.setting_system'
+        }
+      },
+      {
+        name: 'setting_theme',
+        path: '/setting/theme',
+        component: 'view.setting_theme',
+        meta: {
+          title: 'setting_theme',
+          icon: 'majesticons:color-swatch-line',
+          i18nKey: 'route.setting_theme'
+        }
+      }
+    ]
   }
 ];

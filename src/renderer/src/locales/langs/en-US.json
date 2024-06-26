@@ -203,9 +203,13 @@
     "403": "No Permission",
     "404": "Page Not Found",
     "500": "Server Error",
+    "archive": "Archive",
     "home": "Home",
     "login": "Login",
-    "about": "About"
+    "setting": "Setting",
+    "setting_about": "About",
+    "setting_system": "system",
+    "setting_theme": "Appearance"
   },
   "system": {
     "title": "Fridayboot Electron"
@@ -224,7 +228,7 @@
       "right": "Right Footer",
       "visible": "Footer Visible"
     },
-    "grayScale": "grayScale",
+    "grayScale": "Gray-Scale Mode",
     "header": {
       "breadcrumb": {
         "showIcon": "Breadcrumb Icon Visible",

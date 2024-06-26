@@ -20,10 +20,6 @@ declare namespace Env {
   interface ImportMeta extends ImportMetaEnv {
     /** The base url of the application */
     readonly VITE_BASE_URL: string
-    /** The title of the application */
-    readonly VITE_APP_TITLE: string
-    /** The description of the application */
-    readonly VITE_APP_DESC: string
     /** The router history mode */
     readonly VITE_ROUTER_HISTORY_MODE?: RouterHistoryMode
     /** The prefix of the iconify icon */
@@ -100,8 +96,6 @@ declare namespace Env {
      * Iconify icon name
      */
     readonly VITE_MENU_ICON: string
-    /** Whether to build with sourcemap */
-    readonly VITE_SOURCE_MAP?: CommonType.YesOrNo
     /**
      * Iconify api provider url
      *

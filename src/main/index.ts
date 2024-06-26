@@ -1,10 +1,12 @@
 import { electronApp, is, optimizer } from '@electron-toolkit/utils'
 import { BrowserWindow, Menu, Tray, app, ipcMain, shell } from 'electron'
-import log from 'electron-log'
+import logger from 'electron-log'
 import { join } from 'path'
+import 'reflect-metadata'
 import icon from '../../resources/icon.png?asset'
-import { autoUpdaterInit } from './service/auto-update'
-import { createExpressServer } from './service/express-server'
+import { AppDataSource } from './database/data-source'
+import { useAutoUpdater } from './service/auto-update'
+import { closeExpressServer, createExpressServer } from './service/express-server'
 import { Settings } from './settings'
 let httpServer
 let mainWindow: BrowserWindow
@@ -73,24 +75,26 @@ app.whenReady().then(() => {
 // explicitly with Cmd + Q.
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
-    log.info('app quit')
+    logger.info('app quit')
     app.quit()
   }
 })
 
 app.on('before-quit', function () {
   // 停止服务器
-  if (httpServer) {
-    httpServer.close(() => {
-      log.info('Server closed successfully')
-    })
-  }
+  closeExpressServer(httpServer)
 })
-app.whenReady().then(() => {
-  // 检查更新
-  autoUpdaterInit(mainWindow)
 
-  httpServer = createExpressServer(app)
+app.whenReady().then(() => {
+  // 连接 Sqlite 数据库
+  logger.info('app ready')
+  AppDataSource.initialize().catch((err) => {
+    logger.error(err)
+  })
+  // 创建server
+  httpServer = createExpressServer()
+  // 检查更新
+  useAutoUpdater(mainWindow)
   const tray = new Tray(icon)
   const contextMenu = Menu.buildFromTemplate([
     {
@@ -110,7 +114,7 @@ app.whenReady().then(() => {
       }
     }
   ])
-  tray.setToolTip('This is my application.')
+  tray.setToolTip(Settings.AppDesc)
   tray.setContextMenu(contextMenu)
 })
 

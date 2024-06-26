@@ -203,9 +203,13 @@
     "403": "无权限",
     "404": "页面不存在",
     "500": "服务器错误",
+    "archive": "存档",
     "home": "首页",
     "login": "登录",
-    "about": "关于"
+    "setting": "设置",
+    "setting_about": "关于",
+    "setting_system": "通用",
+    "setting_theme": "外观"
   },
   "system": {
     "title": "Fridayboot Electron"

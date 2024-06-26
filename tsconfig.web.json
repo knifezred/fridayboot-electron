@@ -5,7 +5,9 @@
     "src/renderer/src/**/*",
     "src/renderer/src/**/*.vue",
     "src/renderer/src/**/**/*.vue",
-    "src/preload/*.d.ts"
+    "src/renderer/src/**/**/**/*.vue",
+    "src/preload/*.d.ts",
+    "src/main/service/models"
   ],
   "compilerOptions": {
     "composite": true,
@@ -15,5 +17,5 @@
         "src/renderer/src/*"
       ]
     }
-  }
+  },
 }

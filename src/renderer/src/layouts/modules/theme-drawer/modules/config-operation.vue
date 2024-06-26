@@ -53,7 +53,7 @@ onMounted(() => {
       class="absolute opacity-0 -z-1" />
     <NButton type="error" ghost @click="handleReset">{{
       $t('theme.configOperation.resetConfig')
-      }}</NButton>
+    }}</NButton>
     <div ref="domRef" data-clipboard-target="#themeConfigCopyTarget">
       <NButton type="primary">{{ $t('theme.configOperation.copyConfig') }}</NButton>
     </div>

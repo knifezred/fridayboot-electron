@@ -6,11 +6,15 @@ import { useRouteStore } from '../route'
 import { clearAuthStorage, getToken, getUserInfo } from './shared'
 
 import useLoading from '@renderer/packages/hooks/use-loading'
+
+import { useRouterPush } from '@renderer/hooks/common/router'
+import { $t } from '@renderer/locales'
 import { localStg } from '@renderer/utils/storage'
 export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
   const router = useRouter()
   const route = useRoute()
   const routeStore = useRouteStore()
+  const { redirectFromLogin } = useRouterPush()
   const { loading: loginLoading, startLoading, endLoading } = useLoading()
 
   const token = ref(getToken())
@@ -34,7 +38,7 @@ export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
     clearAuthStorage()
 
     authStore.$reset()
-
+    console.log('route.meta.constant' + route.meta.constant)
     if (!route.meta.constant) {
       router.push('/login')
     }
@@ -64,17 +68,16 @@ export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
         await routeStore.initAuthRoute()
 
         if (redirect) {
-          router.push('/login')
-          // await redirectFromLogin();
+          await redirectFromLogin()
         }
 
-        // if (routeStore.isInitAuthRoute) {
-        //   window.$notification?.success({
-        //     title: $t('page.login.common.loginSuccess'),
-        //     content: $t('page.login.common.welcomeBack', { userName: userInfo.userName }),
-        //     duration: 4500
-        //   });
-        // }
+        if (routeStore.isInitAuthRoute) {
+          window.$notification?.success({
+            title: $t('page.login.common.loginSuccess'),
+            content: $t('page.login.common.welcomeBack', { userName: userInfo.userName }),
+            duration: 4500
+          })
+        }
       }
     } else {
       resetStore()

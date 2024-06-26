@@ -25,7 +25,9 @@ function handleGrayscaleChange(value: boolean) {
   themeStore.setGrayscale(value)
 }
 
-const showSiderInverted = computed(() => !themeStore.darkMode && themeStore.layout.mode.includes('vertical'))
+const showSiderInverted = computed(
+  () => !themeStore.darkMode && themeStore.layout.mode.includes('vertical')
+)
 </script>
 
 <template>

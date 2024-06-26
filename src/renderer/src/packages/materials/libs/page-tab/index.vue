@@ -47,7 +47,6 @@ const cssVars = computed(() => createTabCssVars(props.activeColor))
 const bindProps = computed(() => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { chromeClass: _chromeCls, buttonClass: _btnCls, ...rest } = props
-
   return rest
 })
 

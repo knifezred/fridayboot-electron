@@ -18,7 +18,10 @@ export const views: Record<LastLevelRouteKey, RouteComponent | (() => Promise<Ro
   403: () => import("@renderer/views/_error/403/index.vue"),
   404: () => import("@renderer/views/_error/404/index.vue"),
   500: () => import("@renderer/views/_error/500/index.vue"),
-  about: () => import("@renderer/views/about/index.vue"),
+  archive: () => import("@renderer/views/archive/index.vue"),
   home: () => import("@renderer/views/home/index.vue"),
   login: () => import("@renderer/views/login/index.vue"),
+  setting_about: () => import("@renderer/views/setting/about/index.vue"),
+  setting_system: () => import("@renderer/views/setting/system/index.vue"),
+  setting_theme: () => import("@renderer/views/setting/theme/index.vue"),
 };

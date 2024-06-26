@@ -30,7 +30,6 @@ export function initThemeSettings() {
     Object.assign(settings, overrideThemeSettings)
     localStg.set('overrideThemeFlag', BUILD_TIME)
   }
-
   return settings
 }
 

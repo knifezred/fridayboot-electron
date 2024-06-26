@@ -9,8 +9,8 @@ export function getToken() {
 export function getUserInfo() {
   const emptyInfo: Dto.Auth.UserInfo = {
     userId: '',
-    userName: '',
-    roles: [],
+    userName: 'guest',
+    roles: ['SuperAdmin'],
     buttons: []
   }
   const userInfo = localStg.get('userInfo') || emptyInfo

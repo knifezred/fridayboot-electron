@@ -112,7 +112,7 @@ registerShortcut()
       </NInput>
       <NButton v-if="isMobile" type="primary" ghost @click="handleClose">{{
         $t('common.cancel')
-        }}</NButton>
+      }}</NButton>
     </NInputGroup>
 
     <div class="mt-20px">

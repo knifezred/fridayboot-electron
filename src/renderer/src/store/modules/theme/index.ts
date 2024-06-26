@@ -1,5 +1,6 @@
 import { SetupStoreId } from '@renderer/enums'
 import { getPaletteColorByNumber } from '@renderer/packages/color/index'
+import { findStorage } from '@renderer/service/api/storage'
 import { localStg } from '@renderer/utils/storage'
 import { useEventListener, usePreferredColorScheme } from '@vueuse/core'
 import { defineStore } from 'pinia'
@@ -29,6 +30,16 @@ export const useThemeStore = defineStore(SetupStoreId.Theme, () => {
     }
     return settings.value.themeScheme === 'dark'
   })
+
+  findStorage('theme.settings').then((res) => {
+    console.log(res.data)
+    if (res.data != null) {
+      settings.value = JSON.parse(res.data.value) as App.Theme.ThemeSetting
+      settings.value.id = res.data.id == undefined ? 0 : res.data.id
+    }
+  })
+
+  const settingId = computed(() => settings.value.id)
 
   /** grayScale mode */
   const grayscaleMode = computed(() => settings.value.grayScale)
@@ -192,6 +203,7 @@ export const useThemeStore = defineStore(SetupStoreId.Theme, () => {
     setThemeScheme,
     toggleThemeScheme,
     updateThemeColors,
-    setThemeLayout
+    setThemeLayout,
+    settingId
   }
 })

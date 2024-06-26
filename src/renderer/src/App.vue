@@ -23,7 +23,6 @@ defineOptions({
 
 const appStore = useAppStore()
 const themeStore = useThemeStore()
-
 const naiveDarkTheme = computed(() => (themeStore.darkMode ? darkTheme : undefined))
 
 const naiveLocale = computed(() => {

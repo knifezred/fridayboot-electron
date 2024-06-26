@@ -169,6 +169,7 @@ declare namespace App {
           yes: string
           no: string
         }
+        save: string
       }
       request: {
         logout: string
@@ -324,6 +325,9 @@ declare namespace App {
           }
           creativity: string
         }
+        setting: {
+          title: string
+        }
       }
       form: {
         required: string
@@ -396,6 +400,7 @@ declare namespace App {
 
     /** Theme setting */
     interface ThemeSetting {
+      id: number
       /** Theme scheme */
       themeScheme: UnionKey.ThemeScheme
       /** grayScale mode */

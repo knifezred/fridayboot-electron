@@ -9,7 +9,6 @@ import GlobalBreadcrumb from '../global-breadcrumb/index.vue'
 import GlobalLogo from '../global-logo/index.vue'
 import HorizontalMenu from '../global-menu/base-menu.vue'
 import GlobalSearch from '../global-search/index.vue'
-import ThemeButton from './components/theme-button.vue'
 import UserAvatar from './components/user-avatar.vue'
 
 defineOptions({
@@ -66,8 +65,6 @@ const headerMenus = computed(() => {
       <GlobalBreadcrumb v-if="!appStore.isMobile" class="ml-12px" />
     </div>
     <div class="h-full flex-y-center justify-end" style="-webkit-app-region: no-drag">
-      <WindowMinimize />
-      <WindowMaximize @click="toggle" />
       <GlobalSearch />
       <!-- <FullScreen v-if="!appStore.isMobile" :full="isFullscreen" @click="toggle" /> -->
       <LangSwitch
@@ -78,8 +75,9 @@ const headerMenus = computed(() => {
         :theme-schema="themeStore.themeScheme"
         :is-dark="themeStore.darkMode"
         @switch="themeStore.toggleThemeScheme" />
-      <ThemeButton />
       <UserAvatar />
+      <WindowMinimize />
+      <WindowMaximize @click="toggle" />
       <WindowClose />
     </div>
   </DarkModeContainer>

@@ -2,7 +2,7 @@ import { BrowserWindow, ipcMain } from 'electron'
 import log from 'electron-log'
 import { autoUpdater } from 'electron-updater'
 
-export function autoUpdaterInit(mainWindow: BrowserWindow) {
+export function useAutoUpdater(mainWindow: BrowserWindow) {
   autoUpdater.logger = require('electron-log')
   // 设置为 false 以手动触发下载
   autoUpdater.autoDownload = false

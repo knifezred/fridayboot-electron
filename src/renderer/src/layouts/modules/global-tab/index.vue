@@ -142,7 +142,7 @@ function init() {
 }
 
 function removeFocus() {
-  ; (document.activeElement as HTMLElement)?.blur()
+  ;(document.activeElement as HTMLElement)?.blur()
 }
 
 // watch
