@@ -50,7 +50,7 @@ export default defineConfig((configEnv) => {
             const key = routeName
 
             if (key === 'login') {
-              const modules = ['pwd-login', 'register', 'reset-pwd', 'game-start']
+              const modules = ['pwd-login', 'register', 'reset-pwd']
 
               const moduleReg = modules.join('|')
 

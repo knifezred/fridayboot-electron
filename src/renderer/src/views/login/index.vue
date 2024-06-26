@@ -6,7 +6,6 @@ import { useAppStore } from '@renderer/store/modules/app'
 import { useThemeStore } from '@renderer/store/modules/theme'
 import type { Component } from 'vue'
 import { computed } from 'vue'
-import GameStart from './modules/game-start.vue'
 import PwdLogin from './modules/pwd-login.vue'
 import Register from './modules/register.vue'
 import ResetPwd from './modules/reset-pwd.vue'
@@ -29,11 +28,10 @@ interface LoginModule {
 const moduleMap: Record<UnionKey.LoginModule, LoginModule> = {
   'pwd-login': { label: loginModuleRecord['pwd-login'], component: PwdLogin },
   register: { label: loginModuleRecord.register, component: Register },
-  'reset-pwd': { label: loginModuleRecord['reset-pwd'], component: ResetPwd },
-  'game-start': { label: loginModuleRecord['game-start'], component: GameStart }
+  'reset-pwd': { label: loginModuleRecord['reset-pwd'], component: ResetPwd }
 }
 
-const activeModule = computed(() => moduleMap[props.module || 'game-start'])
+const activeModule = computed(() => moduleMap[props.module || 'pwd-login'])
 
 const bgThemeColor = computed(() =>
   themeStore.darkMode ? getPaletteColorByNumber(themeStore.themeColor, 600) : themeStore.themeColor

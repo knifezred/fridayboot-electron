@@ -1,10 +1,10 @@
 {
-  "name": "friday-story",
+  "name": "fridayboot-electron",
   "version": "0.1.1",
   "description": "An Electron application with Vue and TypeScript",
   "main": "./out/main/index.js",
   "author": "KnifeZ",
-  "homepage": "https://gitee.com/KnifeZ/friday-story",
+  "homepage": "https://gitee.com/KnifeZ/fridayboot-electron",
   "website": "https://www.knifez.net",
   "scripts": {
     "format": "prettier --write .",

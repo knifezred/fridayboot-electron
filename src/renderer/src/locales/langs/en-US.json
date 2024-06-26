@@ -166,11 +166,6 @@
         "validateSuccess": "Verification passed",
         "welcomeBack": "Welcome back, {userName} !"
       },
-      "gameStart": {
-        "loadArchive": "Load Archive",
-        "newGame": "New Game",
-        "title": "A simple slg game"
-      },
       "pwdLogin": {
         "admin": "Admin",
         "forgetPassword": "Forget password?",
@@ -217,7 +212,7 @@
     "setting_theme": "Appearance"
   },
   "system": {
-    "title": "Friday Story"
+    "title": "Fridayboot Electron"
   },
   "theme": {
     "configOperation": {

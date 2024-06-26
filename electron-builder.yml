@@ -1,5 +1,5 @@
-appId: com.knifez.friday.story
-productName: friday story
+appId: com.knifez.fridayboot-electron
+productName: fridayboot electron
 directories:
   buildResources: build
 files:
@@ -13,7 +13,7 @@ asarUnpack:
   - resources/**
   - static/**
 win:
-  executableName: friday-story
+  executableName: fridayboot-electron
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
   shortcutName: ${productName}
@@ -41,6 +41,6 @@ appImage:
 npmRebuild: false
 publish:
   provider: generic
-  url: http://dev.knifez.net/friday-story/
+  url: http://dev.knifez.net/fridayboot-electron/
 electronDownload:
   mirror: https://npmmirror.com/mirrors/electron/

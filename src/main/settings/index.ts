@@ -1,6 +1,6 @@
 export const Settings: MainApp.Settings = {
-  AppTitle: 'Friday Story',
+  AppTitle: 'Fridayboot Electron',
   AppDesc: '一个Electron桌面端脚手架',
-  ArchivePath: '/knifez/friday-story/',
+  ArchivePath: '/knifez/fridayboot-electron/',
   ServerPort: 5175
 }

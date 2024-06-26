@@ -63,7 +63,7 @@ export const generatedRoutes: GeneratedRoute[] = [
   },
   {
     name: 'login',
-    path: '/login/:module(pwd-login|register|reset-pwd|game-start)?',
+    path: '/login/:module(pwd-login|register|reset-pwd)?',
     component: 'layout.blank$view.login',
     meta: {
       title: 'login',

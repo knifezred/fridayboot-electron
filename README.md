@@ -1,6 +1,6 @@
 # fridayboot-electron
 
-An Electron application with Vue and TypeScript for SLG Game.
+改自soybean admin的electron框架
 
 ## Recommended IDE Setup
 

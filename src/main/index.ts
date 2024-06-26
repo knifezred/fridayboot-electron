@@ -1,4 +1,4 @@
-import { electronApp, optimizer } from '@electron-toolkit/utils'
+import { electronApp, is, optimizer } from '@electron-toolkit/utils'
 import { BrowserWindow, Menu, Tray, app, ipcMain, shell } from 'electron'
 import logger from 'electron-log'
 import { join } from 'path'
@@ -40,7 +40,7 @@ function createWindow(): void {
 
   // HMR for renderer base on electron-vite cli.
   // Load the remote URL for development or the local html file for production.
-  if (process.env['ELECTRON_RENDERER_URL']) {
+  if (is.dev && process.env['ELECTRON_RENDERER_URL']) {
     mainWindow.loadURL(process.env['ELECTRON_RENDERER_URL'])
   } else {
     mainWindow.loadFile(join(__dirname, '../renderer/index.html'))

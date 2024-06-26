@@ -165,11 +165,6 @@
         "validateSuccess": "验证成功",
         "welcomeBack": "欢迎回来，{userName} ！"
       },
-      "gameStart": {
-        "loadArchive": "读取存档",
-        "newGame": "新的开始",
-        "title": "一个SLG游戏"
-      },
       "pwdLogin": {
         "admin": "管理员",
         "forgetPassword": "忘记密码？",
@@ -185,7 +180,7 @@
         "agreement": "我已经仔细阅读并接受",
         "policy": "《隐私权政策》",
         "protocol": "《用户协议》",
-        "title": "新的开始"
+        "title": "注册"
       },
       "resetPwd": {
         "title": "重置密码"
@@ -217,7 +212,7 @@
     "setting_theme": "外观"
   },
   "system": {
-    "title": "Friday Story"
+    "title": "Fridayboot Electron"
   },
   "theme": {
     "configOperation": {
