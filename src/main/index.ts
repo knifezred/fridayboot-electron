@@ -4,7 +4,6 @@ import logger from 'electron-log'
 import { join } from 'path'
 import 'reflect-metadata'
 import icon from '../../resources/icon.png?asset'
-import { AppDataSource } from './database/data-source'
 import { useAutoUpdater } from './service/auto-update'
 import { closeExpressServer, createExpressServer } from './service/express-server'
 import { Settings } from './settings'
@@ -86,11 +85,6 @@ app.on('before-quit', function () {
 })
 
 app.whenReady().then(() => {
-  // 连接 Sqlite 数据库
-  logger.info('app ready')
-  AppDataSource.initialize().catch((err) => {
-    logger.error(err)
-  })
   // 创建server
   httpServer = createExpressServer()
   // 检查更新
