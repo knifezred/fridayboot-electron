@@ -4,7 +4,7 @@ import { getRoutePath, transformElegantRoutesToVueRoutes } from '../elegant/tran
 export const ROOT_ROUTE: CustomRoute = {
   name: 'root',
   path: '/',
-  redirect: getRoutePath(import.meta.env.VITE_ROUTE_HOME) || '/home',
+  redirect: getRoutePath(import.meta.env.VITE_ROUTE_HOME) || getRoutePath('home'),
   meta: {
     title: 'root',
     constant: true

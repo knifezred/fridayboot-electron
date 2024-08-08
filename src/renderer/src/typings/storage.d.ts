@@ -37,5 +37,7 @@ declare namespace StorageType {
       layout: UnionKey.ThemeLayoutMode
       siderCollapse: boolean
     }
+
+    projectSettings: App.Global.ProjectSetting
   }
 }

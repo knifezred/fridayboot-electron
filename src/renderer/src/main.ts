@@ -4,7 +4,9 @@ import { setupI18n } from './locales'
 import { setupDayjs, setupIconifyOffline, setupLoading, setupNProgress } from './plugins'
 import './plugins/assets'
 import { setupRouter } from './router'
+import { projectSetting } from './settings/projectSetting'
 import { setupStore } from './store'
+import { localStg } from './utils/storage'
 
 async function setupApp() {
   setupLoading()
@@ -16,6 +18,10 @@ async function setupApp() {
   setupDayjs()
 
   const app = createApp(App)
+
+  if (!projectSetting.isAuth) {
+    localStg.set('token', 'NO-AUTH')
+  }
 
   setupStore(app)
 

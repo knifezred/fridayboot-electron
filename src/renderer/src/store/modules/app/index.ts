@@ -10,6 +10,7 @@ import { effectScope, nextTick, onScopeDispose, ref, watch } from 'vue'
 import { useRouteStore } from '../route'
 import { useTabStore } from '../tab'
 import { useThemeStore } from '../theme'
+import { initProjectSettings } from './shared'
 
 export const useAppStore = defineStore(SetupStoreId.App, () => {
   const themeStore = useThemeStore()
@@ -85,6 +86,12 @@ export const useAppStore = defineStore(SetupStoreId.App, () => {
     useTitle(documentTitle)
   }
 
+  const projectSettings = ref<App.Global.ProjectSetting>(initProjectSettings())
+
+  function cacheProjectSettings() {
+    localStg.set('projectSettings', projectSettings.value)
+  }
+
   function init() {
     setDayjsLocale(locale.value)
   }
@@ -139,6 +146,7 @@ export const useAppStore = defineStore(SetupStoreId.App, () => {
 
   // cache mixSiderFixed
   useEventListener(window, 'beforeunload', () => {
+    cacheProjectSettings()
     localStg.set('mixSiderFixed', mixSiderFixed.value ? 'Y' : 'N')
   })
 
@@ -169,6 +177,7 @@ export const useAppStore = defineStore(SetupStoreId.App, () => {
     toggleSiderCollapse,
     mixSiderFixed,
     setMixSiderFixed,
-    toggleMixSiderFixed
+    toggleMixSiderFixed,
+    projectSettings
   }
 })
