@@ -18,7 +18,7 @@ function loginOrRegister() {
   toLogin()
 }
 
-type DropdownKey = 'logout'
+type DropdownKey = 'logout' | 'setting'
 
 type DropdownOption = {
   key: DropdownKey
@@ -28,6 +28,11 @@ type DropdownOption = {
 
 const options = computed(() => {
   const opts: DropdownOption[] = [
+    {
+      label: $t('route.setting'),
+      key: 'setting',
+      icon: SvgIconVNode({ icon: 'carbon:settings-adjust', fontSize: 18 })
+    },
     {
       label: $t('common.logout'),
       key: 'logout',

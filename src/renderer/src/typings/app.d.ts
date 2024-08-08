@@ -162,6 +162,8 @@ declare namespace App {
         pleaseCheckValue: string
         refresh: string
         reset: string
+        save: string
+        saveSuccess: string
         search: string
         switch: string
         tip: string

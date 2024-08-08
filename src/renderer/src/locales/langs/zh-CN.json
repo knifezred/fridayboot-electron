@@ -29,6 +29,7 @@
     "refresh": "刷新",
     "reset": "重置",
     "save": "保存",
+    "saveSuccess": "保存成功",
     "search": "搜索",
     "switch": "切换",
     "tip": "提示",
@@ -187,7 +188,8 @@
       }
     },
     "setting": {
-      "button": {},
+      "button": {
+      },
       "title": "设置"
     }
   },
@@ -210,6 +212,11 @@
     "setting_about": "关于",
     "setting_system": "通用",
     "setting_theme": "外观"
+  },
+  "setting": {
+    "general": {
+      "lang": "语言"
+    }
   },
   "system": {
     "title": "Fridayboot Electron"
